@@ -39,6 +39,7 @@ gem 'russian', '~> 0.6.0'
 gem 'rich', github: 'bastiaanterhorst/rich'
 gem 'paperclip'
 gem 'carrierwave'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
