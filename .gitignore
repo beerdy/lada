@@ -3,7 +3,7 @@ capybara-*.html
 .rspec
 /log
 /tmp
-#/db/*.sqlite3
+/db/*.sqlite3
 /db/*.sqlite3-journal
 #/public/system
 /coverage/
@@ -13,7 +13,7 @@ rerun.txt
 pickle-email-*.html
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
-#config/initializers/secret_token.rb
+config/initializers/secret_token.rb
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
@@ -42,3 +42,9 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+/shared/
+
+._.DS_Store
+.DS_Store
+._*

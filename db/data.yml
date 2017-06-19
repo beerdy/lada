@@ -1,0 +1,90 @@
+
+---
+contents:
+  columns:
+  - id
+  - title
+  - description
+  - slave
+  - image_uid
+  - image_name
+  - url
+  - sort
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - "Социальные сети"
+    - "facebook;https://www.facebook.com/lipetskprime/\r\nvk;https://vk.com/lipetskprime\r\nyoutube;https://www.youtube.com/channel/UCNusqHRWAdF75CUioreV8HQ"
+    - ''
+    - ''
+    - ''
+    - social
+    - 
+    - '2017-06-18 12:58:37.403214'
+    - '2017-06-18 12:58:37.403214'
+
+---
+products:
+  columns:
+  - id
+  - title
+  - description
+  - slave
+  - image_uid
+  - image_name
+  - url
+  - sort
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 4X4 ANNIVERSARY
+    - "ОТ 483 900"
+    - ''
+    - 2017/06/18/946ghy7kbi_2.jpg
+    - 2.jpg
+    - ''
+    - 
+    - '2017-06-18 12:13:36.505467'
+    - '2017-06-18 12:16:43.339347'
+  - - 2
+    - GRANTA ЛИФТБЕК
+    - "ОТ 354 900"
+    - ''
+    - 2017/06/18/4jrrztlub7_3.jpg
+    - 3.jpg
+    - ''
+    - 
+    - '2017-06-18 12:16:30.813099'
+    - '2017-06-18 12:16:30.813099'
+  - - 3
+    - KALINA CROSS
+    - "ОТ 455 800"
+    - ''
+    - 2017/06/18/5batsj0skt_4.jpg
+    - 4.jpg
+    - ''
+    - 
+    - '2017-06-18 12:17:16.721483'
+    - '2017-06-18 12:17:16.721483'
+  - - 4
+    - PRIORA СЕДАН
+    - "ОТ 389 900"
+    - ''
+    - 2017/06/18/8ecstmluag_5.jpg
+    - 5.jpg
+    - ''
+    - 
+    - '2017-06-18 12:17:38.859607'
+    - '2017-06-18 12:17:38.859607'
+  - - 5
+    - VESTA СЕДАН
+    - "ОТ 525 900"
+    - ''
+    - 2017/06/18/5qdhngpv1t_6.jpg
+    - 6.jpg
+    - ''
+    - 
+    - '2017-06-18 12:17:56.260970'
+    - '2017-06-18 12:17:56.260970'
