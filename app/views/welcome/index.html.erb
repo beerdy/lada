@@ -1,16 +1,16 @@
 <section class="slider">
-<div class="flexslider">
-  <div class="flex-viewport">
-    <ul class="slides">
-      <%Slider.all.each do |slide|%>
-      <li class="clone" aria-hidden="true" >
-        <img src="<%=slide.image.url%>" draggable="false">
-        <p class="flex-caption"><a href="/sliders/<%=slide.id%>">ПОДРОБНЕЕ</a></p>
-      </li>
-      <%end%>
-    </ul>
+  <div class="flexslider">
+    <div class="flex-viewport">
+      <ul class="slides">
+        <%Slider.all.each do |slide|%>
+        <li class="clone" aria-hidden="true" >
+          <img src="<%=slide.image.url%>" draggable="false">
+          <p class="flex-caption"><a href="/sliders/<%=slide.id%>">ПОДРОБНЕЕ</a></p>
+        </li>
+        <%end%>
+      </ul>
+    </div>
   </div>
-</div>
 </section>
 
 <section class="products">
@@ -33,7 +33,7 @@
             <h3>ЗВОНИТЕ</h3>
             <h3>(4742) <%=@phone%></h3>
           </div>
-          <
+          </a>
         </div>
         <%end%>
       </div>  

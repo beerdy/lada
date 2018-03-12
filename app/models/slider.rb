@@ -1,5 +1,6 @@
 class Slider < ActiveRecord::Base
   dragonfly_accessor :image
+  dragonfly_accessor :image1
   rails_admin do
     include_all_fields
 

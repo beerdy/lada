@@ -2,17 +2,33 @@
 .header {
   background-color: #FFA200;
   color: white;
-  .caption  {
+  display: table;
+  width: 100%;
+  .row {
+    margin: auto;
+  }
+  .address  {
+    float: left;
     width: 100%;
-    border-right: 2px solid white;
+    padding-left: 25px;
+    border-left: 2px solid white;
+  }
+  .brand {
+    padding-left: 50px; 
   }
 }
 h1 {
   font-weight: bold;
   font-size: 3.0em;
 }
-
+.form-horizontal  {
+  margin-top: 25px;
+}
 @media screen and (max-width: 750px) {
+  .brand,.address  {
+    padding-left: 0px !important;
+    border-left: 0px solid white !important;
+  }
   h1 {
     font-size: 2.2em;
   }

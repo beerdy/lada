@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'policy/index'
+
+  resources :messages
   resources :sliders
   resources :sliders
   devise_for :users

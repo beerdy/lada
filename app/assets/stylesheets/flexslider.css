@@ -26,6 +26,7 @@
 .flex-slider a:hover {
   outline: none;
 }
+.flex-direction-nav { display: none; }
 .slides,
 .slides > li,
 .flex-control-nav,

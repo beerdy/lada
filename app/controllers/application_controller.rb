@@ -8,7 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   def content
+    @message = Message.new
+
     Content.all.each do |c|
+      @policy = c.description if c.url == 'policy'
       @social = c if c.url == 'social'
       @service_1 = c if c.url == 'service_1'
       @code = c if c.url == 'code'

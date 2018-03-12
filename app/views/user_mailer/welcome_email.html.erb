@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Сообщение от, <%= @message.name %></h1>
+    <p>
+    <strong>Обращение: </strong> <%= @message.name %><br>
+    <strong>Е-Маил: </strong> <%= @message.email %><br>
+    <strong>Телефон: </strong> <%= @message.phone %><br>
+    <strong>Сообщение: </strong><br>
+    <%= @message.description %>
+    </p>
+  </body>
+</html>

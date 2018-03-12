@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield :title%> PRIME - официальный дилер ОАО "АВТОВАЗ". Продажа и техническое обслуживание автомобилей LADA</title>
+  <title><%= yield :title%> PRIME - официальный дилер ОАО "АВТОВАЗ". Продажа и техническое обслуживание автомобилей LADA в Липецке</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -11,30 +11,60 @@
 <body>
 <section class="header">
   <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5 name">
-      <div class="caption">
-      <a href="/" style='color: white'>
-        <h1>PRIME</h1>
-        <p>Дилерский центр</p>
+    <div class="col-lg-8 col-md-6">
+      <div class="brand">
+      <a href="http://lada-prime.ru" style='color: white'>
+        <h4>Официальный дилер ЛАДА в Липецке</h4>
+        <h1>Диллерский центр PRIME</h1>
       </a>
       </div>
     </div>
-    <div class="col-sm-5 adress">
-      <h1><a href="tel:84742<%=@phone.tr(' ', '')%>" style='color: white'><i class="fa fa-phone-square" aria-hidden="true"></i> (4742) <%=@phone%></a></h1>
-      <p>Липецк, Лебедянское шоссе, вл. 2</p>
+    <div class="col-lg-4 col-md-6">
+      <div class="address">
+        <h1><a href="tel:84742<%=@phone.tr(' ', '')%>" style='color: white'><i class="fa fa-phone-square" aria-hidden="true"></i> (4742) <%=@phone%></a></h1>
+        <p>Липецк, Лебедянское шоссе, вл. 2</p>
+      </div>
     </div>
-    <div class="col-sm-1"></div>
   </div>
 </section>
 <%= yield %>
 <section class="footer">
   <div class="container">
     <div class="row social">
+      <div class="col-md-offset-3 col-md-6 col-sm-6">
+                  <%= form_for @message, :remote => true, :html => {:class => 'form-horizontal text-center'} do |f| %>
+                    <div class="form-group">
+                      <label for="exampleInputName2">Обращение</label>
+                      <%= f.text_field :name, class: 'form-control', placeholder: "Как к Вам обращаться" %>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">E-Mail</label>
+                      <%= f.text_field :email, class: 'form-control', placeholder: "Ваш e-mail" %>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Телефон (<i>в свободной форме</i>)</label>
+                      <%= f.text_field :phone, class: 'form-control', placeholder: "Ваш номер телефона" %>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputText">Сообщение</label>
+                      <%= f.text_area :description, class: 'form-control', placeholder: "Текст Вашего сообщения" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputText">* Соглашаюсь на обработку данных, ознакомлен с </label>
+                      <a href="/policy/index" style="color: white"> политикой конфиденциальности </a>
+                      <%= f.check_box :policy %>
+                    </div>
+
+                    <%= button_to "Отправить", @article, remote: true %>
+  
+                  <%end%>
+      </div>
       <div class="col-md-12">
         <h2>ищите <strong>нас</strong></h2>
         <ul>
-
           <% @social.description.each_line do |social| %>
           <% fa,url = social.split ';' %>
           <li>
@@ -44,7 +74,6 @@
             </a>
           </li>
           <%end%>
-
         </ul>
       </div>
       <%=@code.description.html_safe%>

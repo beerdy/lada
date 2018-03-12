@@ -2,7 +2,13 @@
 <section class="description">
   <div class="container">
     <h2 class='head-slide'><%=@slider.title%></h2>
-    <%=image_tag @slider.image.url, alt: @slider.title, class: 'img-responsive' %>
+    <%= 
+    if @slider.image1_stored?
+      image_tag @slider.image1.url, alt: @slider.title, class: 'img-responsive' 
+    else
+      image_tag @slider.image.url, alt: @slider.title, class: 'img-responsive'
+    end if @slider.image_stored?
+    %>
     <%=@slider.description.html_safe%>
   </div>
 </section>
