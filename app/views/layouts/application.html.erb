@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield :title%> PRIME - официальный дилер ОАО "АВТОВАЗ". Продажа и техническое обслуживание автомобилей LADA в Липецке</title>
+  <title><%= yield :title%> <%= @title.description if @title %></title> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- meta from title -->
+  <%= @title.slave.html_safe if @title %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,15 +18,14 @@
     <div class="col-lg-8 col-md-6">
       <div class="brand">
       <a href="http://lada-prime.ru" style='color: white'>
-        <h4>Официальный дилер ЛАДА в Липецке</h4>
-        <h1>Диллерский центр PRIME</h1>
+        <%= @headerr.description.html_safe if @headerr %>      
       </a>
       </div>
     </div>
     <div class="col-lg-4 col-md-6">
       <div class="address">
         <h1><a href="tel:84742<%=@phone.tr(' ', '')%>" style='color: white'><i class="fa fa-phone-square" aria-hidden="true"></i> (4742) <%=@phone%></a></h1>
-        <p>Липецк, Лебедянское шоссе, вл. 2</p>
+        <p><%= @headerr.slave.html_safe if @headerr %></p>
       </div>
     </div>
   </div>
