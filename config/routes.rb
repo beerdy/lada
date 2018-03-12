@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sliders
+  resources :sliders
   devise_for :users
   resources :products
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
     Content.all.each do |c|
       @social = c if c.url == 'social'
       @service_1 = c if c.url == 'service_1'
-      @service_2 = c if c.url == 'service_2'
       @code = c if c.url == 'code'
       @logo = c if c.url == 'logo'
+      eval(c.description) if c.url == 'variables'
     end
   end
 end

@@ -1,0 +1,8 @@
+<% content_for :title, @slider.title%>
+<section class="description">
+  <div class="container">
+    <h2 class='head-slide'><%=@slider.title%></h2>
+    <%=image_tag @slider.image.url, alt: @slider.title, class: 'img-responsive' %>
+    <%=@slider.description.html_safe%>
+  </div>
+</section>

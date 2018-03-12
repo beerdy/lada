@@ -44,7 +44,7 @@ bower.json
 .byebug_history
 
 /shared/
-
+/public/
 ._.DS_Store
 .DS_Store
 ._*

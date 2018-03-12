@@ -1,32 +1,13 @@
-<section class="header">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5 name">
-      <div class="caption">
-        <h1>PRIME</h1>
-        <p>Дилерский центр</p>
-      </div>
-    </div>
-    <div class="col-sm-5 adress">
-      <h1><i class="fa fa-phone-square" aria-hidden="true"></i> (4742) 500 777</h1>
-      <p>Липецк, Лебедянское шоссе, вл. 2</p>
-    </div>
-    <div class="col-sm-1"></div>
-  </div>
-</section>
-
 <section class="slider">
 <div class="flexslider">
   <div class="flex-viewport">
     <ul class="slides">
+      <%Slider.all.each do |slide|%>
       <li class="clone" aria-hidden="true" >
-        <img src="/assets/1.jpg" draggable="false">
-        <p class="flex-caption">ЛУЧШИЕ СПЕЦПРЕДЛОЖЕНИЯ</p>
+        <img src="<%=slide.image.url%>" draggable="false">
+        <p class="flex-caption"><a href="/sliders/<%=slide.id%>">ПОДРОБНЕЕ</a></p>
       </li>
-      <li class="" data-thumb-alt="">
-        <img src="/assets/2.jpg" draggable="false">
-        <p class="flex-caption">ЛУЧШИЕ СПЕЦПРЕДЛОЖЕНИЯ</p>
-      </li>
+      <%end%>
     </ul>
   </div>
 </div>
@@ -47,17 +28,19 @@
           <div class="caption-image">
             <%= image_tag  product.image.url, alt: product.title, class: 'img-responsive'%>
           </div>
+          <a href="tel:84742<%=@phone.tr(' ', '')%>" style='color: white'>
           <div class="caption-button">
             <h3>ЗВОНИТЕ</h3>
-            <h3>(4742) 500 777</h3>
+            <h3>(4742) <%=@phone%></h3>
           </div>
+          <
         </div>
         <%end%>
       </div>  
     </div>
     <br><br><br>
     <script type="text/javascript">
-      $( document ).ready(function() {
+      $(document).on('turbolinks:load',function() {
         function func() {
           var heights = $(".caption-title h2").map(function() {
               return $(this).height();
@@ -82,28 +65,4 @@
         window.addEventListener("resize", func);
       });
     </script>
-</section>
-
-<section class="footer">
-  <div class="container">
-    <div class="row social">
-      <div class="col-md-12">
-        <h2>ищите <strong>нас</strong></h2>
-        <ul>
-
-          <% @social.description.each_line do |social| %>
-          <% fa,url = social.split ';' %>
-          <li>
-            <a class="fa-stack fa-lg" href="<%=url%>" target="blank"> 
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-<%=fa%> fa-stack-1x fa-inverse"></i>
-            </a>
-          </li>
-          <%end%>
-
-        </ul>
-      </div>
-      <%=@code.description.html_safe%>
-    </div>
-  </div>
 </section>

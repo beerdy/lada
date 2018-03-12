@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lada</title>
+  <title><%= yield :title%> PRIME - официальный дилер ОАО "АВТОВАЗ". Продажа и техническое обслуживание автомобилей LADA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<section class="header">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5 name">
+      <div class="caption">
+      <a href="/" style='color: white'>
+        <h1>PRIME</h1>
+        <p>Дилерский центр</p>
+      </a>
+      </div>
+    </div>
+    <div class="col-sm-5 adress">
+      <h1><a href="tel:84742<%=@phone.tr(' ', '')%>" style='color: white'><i class="fa fa-phone-square" aria-hidden="true"></i> (4742) <%=@phone%></a></h1>
+      <p>Липецк, Лебедянское шоссе, вл. 2</p>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</section>
 <%= yield %>
+<section class="footer">
+  <div class="container">
+    <div class="row social">
+      <div class="col-md-12">
+        <h2>ищите <strong>нас</strong></h2>
+        <ul>
 
+          <% @social.description.each_line do |social| %>
+          <% fa,url = social.split ';' %>
+          <li>
+            <a class="fa-stack fa-lg" href="<%=url%>" target="blank"> 
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-<%=fa%> fa-stack-1x fa-inverse"></i>
+            </a>
+          </li>
+          <%end%>
+
+        </ul>
+      </div>
+      <%=@code.description.html_safe%>
+    </div>
+  </div>
+</section>
 </body>
 </html>

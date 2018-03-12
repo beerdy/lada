@@ -4,6 +4,7 @@ workers 1
 threads 1, 1
 
 app_dir = File.expand_path("../..", __FILE__)
+log_dir = File.expand_path("../../..", __FILE__)
 shared_dir = "#{app_dir}/shared"
 
 # Default to production
@@ -14,7 +15,7 @@ environment rails_env
 bind "unix://#{shared_dir}/sockets/puma.sock"
 
 # Logging
-stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
+stdout_redirect "#{log_dir}/log/rails/puma/stdout.log", "#{log_dir}/log/rails/puma/stderr.log", true
 
 # Set master PID and state locations
 pidfile "#{shared_dir}/pids/puma.pid"
