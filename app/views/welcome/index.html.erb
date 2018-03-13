@@ -2,7 +2,7 @@
   <div class="flexslider">
     <div class="flex-viewport">
       <ul class="slides">
-        <% Slider.all.each do |slide|%>
+        <% Slider.all.sort_by(&:sort).each do |slide|%>
         <li class="clone" aria-hidden="true" >
           <img src="<%=slide.image.url%>" draggable="false">
           <p class="flex-caption"><a href="/sliders/<%=slide.id%>">ПОДРОБНЕЕ</a></p>

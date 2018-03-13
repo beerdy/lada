@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
 
   def content
     @message = Message.new
-    @sliders = Slider.all.sort_by(&:sort)
     Content.all.each do |c|
       @title = c if c.url == 'title'
       @headerr = c if c.url == 'headerr'
