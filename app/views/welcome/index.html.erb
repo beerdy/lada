@@ -2,7 +2,7 @@
   <div class="flexslider">
     <div class="flex-viewport">
       <ul class="slides">
-        <% @sliders.sort_by(&:sort).each do |slide|%>
+        <% Slider.all.each do |slide|%>
         <li class="clone" aria-hidden="true" >
           <img src="<%=slide.image.url%>" draggable="false">
           <p class="flex-caption"><a href="/sliders/<%=slide.id%>">ПОДРОБНЕЕ</a></p>
@@ -16,7 +16,7 @@
 <section class="products">
     <div class="container">
       <div class="row">
-        <% @count = 0; Product.all.each do |product| %>
+        <% @count = 0; Product.all.sort_by(&:sort).each do |product| %>
         <%= @count>=3? (@count=1;'</div><div class="row">'.html_safe) : (@count+=1;'') %>
         <div class="col-sm-4">
           <div class="caption-title">
