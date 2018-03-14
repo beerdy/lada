@@ -17,7 +17,11 @@
   <div class="row">
     <div class="col-lg-8 col-md-6">
       <div class="brand">
-      <a href="http://lada-prime.ru" style='color: white'>
+      <% if current_page?('/') %>
+      <a href="http://lada-prime.ru" target="_blank" style='color: white'>
+      <% else %>
+      <a href="/" style='color: white'>
+      <%end%>
         <%= @headerr.description.html_safe if @headerr %>      
       </a>
       </div>
