@@ -4,6 +4,6 @@ class UserMailer < ApplicationMailer
   def welcome_email(message)
     @message = message
     @url = 'http://лада-прайм.рф'
-    mail(to: 'ss48.a@yandex.ru', subject: 'LADA-PRIME message')
+    mail(to: 'prime.lipetsk@yandex.ru', subject: 'LADA-PRIME message')
   end
 end
