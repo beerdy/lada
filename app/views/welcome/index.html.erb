@@ -5,7 +5,8 @@
         <% Slider.all.sort_by(&:sort).each do |slide|%>
         <li class="clone" aria-hidden="true" >
           <img src="<%=slide.image.url%>" draggable="false">
-          <p class="flex-caption"><a href="/sliders/<%=slide.id%>">ПОДРОБНЕЕ</a></p>
+          <p class="flex-caption"><a href="/sliders/<%=slide.id%>" class="btn btn-danger btn-lg " style="border-radius:50px;font-size:100%; border: 2px solid orange">ПОДРОБНЕЕ <i class="fa fa-tags" aria-hidden="true"></i>
+</a></p>
         </li>
         <%end%>
       </ul>
