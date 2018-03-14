@@ -1,5 +1,6 @@
 <% if @message.policy %>
 alert('Выше сообщение успешно получено');
+document.getElementById('new_message').style.display = 'none';
 <% else %>
 alert('Вам необходимо согласиться с политикой конфедициальности');
 <% end %>
