@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     @message = Message.new
     Content.all.each do |c|
       @title = c if c.url == 'title'
+      @buttons = c if c.url == 'buttons'
       @headerr = c if c.url == 'headerr'
       @policy = c.description if c.url == 'policy'
       @social = c if c.url == 'social'

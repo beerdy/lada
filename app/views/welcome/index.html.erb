@@ -17,8 +17,7 @@
 <section class="products">
     <div class="container">
       <div class="row">
-        <% @count = 0; Product.all.sort_by(&:sort).each do |product| %>
-        <%= @count>=3? (@count=1;'</div><div class="row">'.html_safe) : (@count+=1;'') %>
+        <% Product.all.sort_by(&:sort).each do |product| %>
         <div class="col-sm-4">
           <div class="caption-title">
             <h2><%=product.title%></h2>
@@ -37,33 +36,70 @@
           </a>
         </div>
         <%end%>
+        <div class="col-sm-4 static-col">
+          <div class="caption-description text-center">
+            <%= @buttons.slave.html_safe%>
+          </div>
+          <style type="text/css">
+            .caption-button {
+              border-radius:50px;
+            }
+            .static-col .btn-lg {
+              border-radius:50px;
+              margin-top: 3px;
+              width: 100%;
+            }
+          </style>
+          <div  class="caption-image text-center">
+            <%= @buttons.description.html_safe%>
+          </div>
+          <a href="tel:84742565071" style="color: white">
+          <div class="caption-button">
+            <h3>ЗВОНИТЕ</h3>
+            <h3>(4742) 565 071</h3>
+          </div>
+          </a>
+        </div>
       </div>  
     </div>
     <br><br><br>
     <script type="text/javascript">
       $(document).on('turbolinks:load',function() {
-        function func() {
-          var heights = $(".caption-title h2").map(function() {
-              return $(this).height();
-          }).get(),
-          maxHeight = Math.max.apply(null, heights);
-          $(".caption-title").height(maxHeight);
 
-          var heights = $(".caption-description h3").map(function() {
-              return $(this).height();
-          }).get(),
-          maxHeight = Math.max.apply(null, heights);
-          $(".caption-description").height(maxHeight);
+        var delayResize, resizeElements, resizeOnMainPage;
+        
 
-          var heights = $(".caption-image img").map(function() {
-              return $(this).height();
-          }).get(),
+        resizeOnMainPage = function(captured,wrap) { // source, distanse
+          var heights=[], maxHeight;
+          $(captured).each(function() {
+            heights.push($(this).height());
+          });
           maxHeight = Math.max.apply(null, heights);
-          $(".caption-image").height(maxHeight);
-        }
+          $(wrap).height(maxHeight);
+        };
 
-        setTimeout(func, 1000);
-        window.addEventListener("resize", func);
+        delayResize = function(func) {
+          var timer;
+          timer = void 0;
+          return function(event) {
+            if (timer) {
+              clearTimeout(timer);
+            }
+            timer = setTimeout(func, 1000, event);
+          };
+        };
+
+        //resize when load
+        setTimeout(function() {
+          resizeOnMainPage('.col-sm-4','.col-sm-4');
+        }, 1000);
+
+        //resize when resize window
+        return window.addEventListener('resize', delayResize(resizeElements = function(e) {
+          resizeOnMainPage('.col-sm-4','.col-sm-4');
+          return false;
+        }));
+
       });
     </script>
 </section>
