@@ -84,6 +84,7 @@ h1 {
     background-color:#BC741C;
   }
 }
+
 .footer {
   background-color: #546871;
   .social {
@@ -106,7 +107,6 @@ h1 {
   }
 }
 
-
 .slides a {
   color: white !important;
 }
@@ -116,4 +116,13 @@ h1 {
 .head-slide {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.caption-button {
+  border-radius:50px;
+}
+.static-col .btn-lg {
+  border-radius:50px;
+  margin-top: 3px;
+  width: 100%;
 }
